@@ -23,25 +23,13 @@
 [crowsnest]
 log_path: ~/printer_data/logs/crowsnest.log
 log_level: verbose                      # Valid Options are quiet/verbose/debug
-delete_log: true                       # Deletes log on every restart, if set to true
+delete_log: false                       # Deletes log on every restart, if set to true
 
-
-# [05/28/23 17:29:25] crowsnest:          Size: Discrete 1280x720
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.033s (30.000 fps)
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.042s (24.000 fps)
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.050s (20.000 fps)
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.067s (15.000 fps)
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.100s (10.000 fps)
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.133s (7.500 fps)
-# [05/28/23 17:29:25] crowsnest:          Interval: Discrete 0.200s (5.000 fps
-[cam logic920]
-mode: camera-streamer                   # mjpg/rtsp
+[cam 1]
+mode: mjpg                              # mjpg/rtsp
 port: 8080                              # Port
-enable_rtsp: true
-rtsp_port: 8554
 device: /dev/video0                     # See Log for available ...
-resolution: 1280x720                     # widthxheight format
+resolution: 640x480                     # widthxheight format
 max_fps: 15                             # If Hardware Supports this it will be forced, otherwise ignored/coerced.
 #custom_flags:                          # You can run the Stream Services with custom flags.
-v4l2ctl: focus_auto=0,focus_absolute=30
 #v4l2ctl:                               # Add v4l2-ctl parameters to setup your camera, see Log what your cam is capable of.
